@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BMI</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+	<style>
+		body {
+			background-image: url(cutecore.jpg);
+			font-family: cursive;
+			background-size:cover;
+background-attachment: fixed;
+background-repeat: no-repeat;
+
+		}
+	</style>
+</head>
+<body>
+
+<div class="container-fluid m-5 p-3">
+	<div class="text-center">
+<h1 class="mx-auto d-block" style="font-weight: bolder;"> BMI CALCULATOR</h1>
+
+<br><br>
+
+
+<details>
+<summary>What is BMI?</summary>
+<i> Body mass index (BMI) is a tool that healthcare providers use to estimate the amount of body fat by using your height and weight measurements. It can help assess risk factors for certain health conditions. The BMI isn’t always an accurate representation of body fatness. (Professional, 2025)</i>
+
+<i> What does the result mean? </i>
+
+<i> <table style="align-content: center;">
+		<tr style="background-color: white;">
+			<th>Category</th>
+			<th>Range</th>
+			
+		</tr>
+
+		<tr style="background-color: white;">
+			<td>Underweight</td>
+			<td>< 18.5</td>
+			
+
+		</tr>
+
+		<tr style="background-color: white;">
+			<td>Normal</td>
+			<td>>= 18.5 and <= 24.9</td>
+			
+
+		</tr>
+
+
+		<tr style="background-color: white;">
+			<td>Overweight</td>
+			<td>>=25 and <= 29.9</td>
+
+
+		<tr style="background-color: white;">
+			<td>Obese</td>
+			<td>>=30</td>
+			
+
+		</tr>
+
+
+
+
+
+</table></i>
+</details>
+
+<br><br>
+
+<h5> Put your weight <span style="font-weight: bolder;"> in kilograms. </span></h5>
+<input type="number" id="weightKG" placeholder="WEIGHT IN KG">
+
+<br><br>
+
+<h5> Put your height <span style="font-weight: bolder;"> in meters. </span></h5>
+<input type="number" id="heightMETERS" placeholder="HEIGHT IN METERS">
+
+<br><br>
+
+<button type="button" onclick="BMI()"> Calculate </button>
+
+<br><br>
+
+<h1 id="show_here"> You are: </h1>
+
+</div>
+</div>
+
+<script>
+	
+function BMI() {
+
+	var weight = document.getElementById ("weightKG").value;
+	var height = document.getElementById ("heightMETERS").value;
+	var cal = Number(weight) / (Number(height)**2) ;
+
+	if(cal < 18.5){document.getElementById(
+	"show_here").innerHTML = "You are Underweight"; }
+
+	else if(cal < 24.9){document.getElementById(
+	"show_here").innerHTML = "You are Normal"; }
+
+	else if(cal < 29.9){document.getElementById(
+	"show_here").innerHTML = "You are Overweight"; }
+
+	else if (cal >= 30){document.getElementById(
+	"show_here").innerHTML = "You are Obese"; }
+
+}
+
+</script>
+
+
+</body>
+</html>
